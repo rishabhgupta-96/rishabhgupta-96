@@ -21,8 +21,10 @@ jobs:
         # Revert to lowlighter/metrics@latest once that fix merges upstream.
         uses: dkhokhlov/metrics@ca58c6bb513e4a04afca0ad2e46b943b543f74cc
         with:
-          # A personal access token stored as the METRICS_TOKEN repo secret.
-          # A scopeless (public) token is enough for the achievements plugin.
+          # METRICS_TOKEN repo secret. The projectsV2-based achievements query
+          # requires the read:project scope. Use a DEDICATED, minimally-scoped
+          # token (read:project only) — do NOT reuse a broad admin PAT with a
+          # third-party fork action.
           token: ${{ secrets.METRICS_TOKEN }}
           filename: metrics.plugin.achievements.svg
           # base: "" drops the default header/activity panels so the SVG

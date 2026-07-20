@@ -15,7 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Achievements
-        uses: lowlighter/metrics@latest
+        # Pinned to the fork carrying PR #1769 (projectsV2 migration).
+        # lowlighter/metrics @latest/@master still query the deprecated
+        # Projects (classic) API and fail with "Unexpected error".
+        # Revert to lowlighter/metrics@latest once that fix merges upstream.
+        uses: dkhokhlov/metrics@ca58c6bb513e4a04afca0ad2e46b943b543f74cc
         with:
           # A personal access token stored as the METRICS_TOKEN repo secret.
           # A scopeless (public) token is enough for the achievements plugin.

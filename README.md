@@ -14,3 +14,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+### 🏆 GitHub Achievements
+
+![GitHub Achievements](./metrics.plugin.achievements.svg)
